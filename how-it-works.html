@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Mobile Blasting Works | Process, Media &amp;amp; What to Expect</title>
+<meta name="description" content="A plain-English guide to mobile abrasive blasting: the process step by step, how blast media is chosen, what surface profile means and what drives the price.">
+<link rel="canonical" href="https://example.com/how-it-works.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --graphite:#191d21; --graphite-2:#22282d; --steel:#3d4a55; --steel-lt:#6b7b88;
+  --concrete:#eef1f3; --concrete-2:#e2e7ea; --paper:#fff;
+  --hivis:#ffc82e; --hivis-dk:#e0aa06; --oxide:#b4451f;
+  --line:#d5dce1; --ink:#14181b;
+  --sh:0 14px 34px -16px rgba(25,29,33,.34);
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+body{font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);
+  line-height:1.62;-webkit-font-smoothing:antialiased;font-size:16.5px}
+h1,h2,h3,h4,.disp{font-family:'Archivo Black','Archivo',sans-serif;font-weight:400;
+  line-height:1.06;letter-spacing:-.012em;text-transform:uppercase}
+a{color:var(--oxide);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+:focus-visible{outline:3px solid var(--oxide);outline-offset:2px}
+
+/* ---- utility bits ---- */
+.kicker{font-family:var(--mono);font-size:.7rem;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--oxide);font-weight:600;display:block;margin-bottom:.75rem}
+.kicker-lt{color:var(--hivis)}
+.btn{display:inline-block;font-family:var(--mono);font-weight:600;font-size:.82rem;
+  letter-spacing:.09em;text-transform:uppercase;padding:.85rem 1.5rem;border:0;cursor:pointer;
+  background:var(--hivis);color:var(--graphite);transition:background .15s,transform .15s}
+.btn:hover{background:var(--hivis-dk);text-decoration:none;color:var(--graphite);transform:translateY(-1px)}
+.btn-dk{background:var(--graphite);color:#fff}
+.btn-dk:hover{background:#000;color:#fff}
+.btn-wide{display:block;width:100%;text-align:center}
+.lead{font-size:1.14rem;color:var(--steel);max-width:60ch}
+
+/* ---- hazard rule: the one decorative motif, used as a section marker ---- */
+.hz{height:6px;background:repeating-linear-gradient(115deg,var(--hivis) 0 14px,var(--graphite) 14px 28px)}
+
+/* ---- header ---- */
+.util{background:var(--graphite);color:#a9b6c0;font-family:var(--mono);font-size:.73rem}
+.util .wrap{display:flex;justify-content:space-between;gap:1rem;padding:.45rem 22px;flex-wrap:wrap}
+.util a{color:#dbe3e8}
+.util strong{color:var(--hivis)}
+header{position:sticky;top:0;z-index:80;background:#fff;border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;padding:.65rem 0}
+.brand{display:flex;align-items:center;gap:.65rem;color:var(--ink)}
+.brand:hover{text-decoration:none}
+.brand .mk{width:44px;height:44px;flex:none;background:var(--graphite);color:var(--hivis);
+  display:grid;place-items:center;font-family:'Archivo Black';font-size:.95rem;letter-spacing:-.02em}
+.brand b{display:block;font-family:'Archivo Black';font-size:1.02rem;text-transform:uppercase;
+  line-height:1.05;white-space:nowrap}
+@media(max-width:430px){.brand b{font-size:.86rem}.brand .mk{width:38px;height:38px;font-size:.8rem}}
+.brand span{font-family:var(--mono);font-size:.63rem;letter-spacing:.11em;color:var(--steel-lt);text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:1.35rem}
+.nav>a,.dd>a{font-family:var(--mono);font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--graphite);font-weight:500;white-space:nowrap}
+.nav>a:hover,.dd>a:hover{color:var(--oxide);text-decoration:none}
+.dd{position:relative}
+.dd>a::after{content:"+";margin-left:.35rem;color:var(--oxide);font-weight:700}
+.dd .pan{position:absolute;top:calc(100% + .55rem);left:-.9rem;min-width:250px;background:#fff;
+  border:1px solid var(--line);box-shadow:var(--sh);padding:.4rem;opacity:0;visibility:hidden;
+  transform:translateY(5px);transition:.16s}
+.dd:hover .pan,.dd:focus-within .pan{opacity:1;visibility:visible;transform:none}
+.dd .pan a{display:block;padding:.5rem .7rem;font-size:.87rem;color:var(--graphite);font-family:'IBM Plex Sans'}
+.dd .pan a:hover{background:var(--concrete);color:var(--oxide);text-decoration:none}
+.burg{display:none;background:none;border:0;cursor:pointer;padding:6px;flex-direction:column;gap:5px}
+.burg i{display:block;width:25px;height:2px;background:var(--graphite)}
+
+/* ---- hero ---- */
+.hero{background:var(--graphite);color:#fff;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background:radial-gradient(circle at 78% 18%,rgba(255,200,46,.12),transparent 46%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;
+  gap:3rem;align-items:start;padding:3.4rem 22px 3.6rem}
+.hero h1{font-size:clamp(2.1rem,4.6vw,3.5rem);color:#fff}
+.hero h1 em{font-style:normal;color:var(--hivis)}
+.hero .lead{color:#c3ced6;margin-top:1.1rem;font-size:1.1rem}
+.area{font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+  color:#8b9aa6;margin-top:1.5rem;padding-top:1.1rem;border-top:1px solid rgba(255,255,255,.14)}
+.area b{color:#fff;display:block;margin-bottom:.3rem;letter-spacing:.13em;font-size:.7rem}
+.hero-list{list-style:none;margin-top:1.5rem;display:grid;gap:.5rem}
+.hero-list li{padding-left:1.35rem;position:relative;color:#d5dee4;font-size:.97rem}
+.hero-list li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;background:var(--hivis)}
+
+/* ---- quote card ---- */
+.qc{background:#fff;color:var(--ink);border-top:6px solid var(--hivis);box-shadow:var(--sh)}
+.qc-h{padding:1.15rem 1.4rem .1rem}
+.qc-h h2,.qc-h h3{font-size:1.16rem}
+.qc-h p{font-family:var(--mono);font-size:.71rem;letter-spacing:.06em;color:var(--steel-lt);
+  text-transform:uppercase;margin-top:.4rem}
+form.qf{padding:1rem 1.4rem 1.4rem;display:grid;gap:.7rem}
+form.qf .two{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+form.qf label{font-family:var(--mono);font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--steel);display:block;margin-bottom:.28rem;font-weight:600}
+form.qf input,form.qf select,form.qf textarea{width:100%;border:1px solid var(--line);
+  background:var(--concrete);padding:.62rem .7rem;font-family:'IBM Plex Sans';font-size:.94rem;color:var(--ink)}
+form.qf input:focus,form.qf select:focus,form.qf textarea:focus{outline:none;border-color:var(--oxide);background:#fff}
+form.qf textarea{min-height:78px;resize:vertical}
+form.qf .fine{font-family:var(--mono);font-size:.65rem;letter-spacing:.05em;color:var(--steel-lt);text-align:center}
+.qstep{position:relative;padding-left:1.9rem}
+.qnum{position:absolute;left:0;top:0;width:1.35rem;height:1.35rem;background:var(--graphite);
+  color:var(--hivis);font-family:var(--mono);font-size:.7rem;font-weight:600;display:grid;place-items:center}
+.qrule{border:0;border-top:1px solid var(--line);margin:.35rem 0}
+.opt{font-weight:400;color:var(--steel-lt);letter-spacing:.04em}
+.ok{display:none;background:#123;color:var(--hivis);font-family:var(--mono);font-size:.78rem;
+  padding:.7rem .9rem;line-height:1.5}
+.ok.on{display:block}
+
+/* ---- sections ---- */
+.sec{padding:3.5rem 0}
+.sec-alt{background:var(--concrete)}
+.sec h2{font-size:clamp(1.5rem,3vw,2.1rem)}
+.sec>.wrap>.lead{margin-top:.85rem}
+.sec-head{max-width:64ch;margin-bottom:2rem}
+
+/* ---- card images ---- */
+.card{padding:0}
+.card-media{aspect-ratio:16/10;background:var(--concrete-2);position:relative;overflow:hidden;
+  border-bottom:1px solid var(--line)}
+.card-media img{width:100%;height:100%;object-fit:cover;display:block}
+.card-media.empty::after{content:attr(data-label);position:absolute;inset:0;display:grid;place-items:center;
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:#98a5ae;
+  text-align:center;padding:1rem;line-height:1.6}
+.card-body{padding:1.25rem 1.35rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+
+/* ---- card grids ---- */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.15rem}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.15rem}
+.card{background:#fff;border:1px solid var(--line);padding:1.4rem;display:flex;flex-direction:column;gap:.55rem}
+.sec-alt .card{background:#fff}
+.card h3{font-size:1.05rem}
+.card p{font-size:.94rem;color:var(--steel);flex:1}
+.card .go{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--oxide)}
+.card:hover{border-color:var(--steel-lt)}
+.card-n{font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;color:var(--steel-lt);text-transform:uppercase}
+
+/* ---- SIGNATURE: spec strip ---- */
+.spec{border-top:2px solid var(--graphite);border-bottom:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(4,1fr);margin:1.8rem 0 2rem;background:var(--concrete)}
+.spec div{padding:.85rem 1rem;border-right:1px solid var(--line)}
+.spec div:last-child{border-right:0}
+.spec dt{font-family:var(--mono);font-size:.63rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--steel-lt);margin-bottom:.22rem}
+.spec dd{font-family:var(--mono);font-size:.85rem;color:var(--graphite);font-weight:600;line-height:1.35}
+
+/* ---- article layout ---- */
+.two-col{display:grid;grid-template-columns:1fr 340px;gap:3rem;align-items:start;padding:3rem 0}
+.prose h2{font-size:1.3rem;margin:2rem 0 .7rem}
+.prose h2:first-child{margin-top:0}
+.prose p{margin-bottom:1rem;color:#2c3439}
+.prose ul{margin:1rem 0 1.4rem 1.1rem;color:#2c3439}
+.prose li{margin-bottom:.42rem}
+.prose .lead{margin-bottom:1.6rem;color:var(--steel)}
+aside.rail{position:sticky;top:88px;display:grid;gap:1.2rem}
+.rail-box{border:1px solid var(--line);padding:1.15rem}
+.rail-box h4{font-size:.95rem;margin-bottom:.7rem}
+.rail-box a{display:block;padding:.32rem 0;font-size:.92rem}
+.callbox{background:var(--graphite);color:#fff;padding:1.3rem}
+.callbox p{font-size:.9rem;color:#b9c5cd;margin-bottom:.7rem}
+.callbox .num{font-family:'Archivo Black';font-size:1.5rem;color:var(--hivis);display:block;margin-bottom:.2rem}
+.callbox .num:hover{text-decoration:none}
+
+/* ---- crumbs ---- */
+.crumb{font-family:var(--mono);font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--steel-lt);padding:.85rem 0;border-bottom:1px solid var(--line)}
+.crumb a{color:var(--steel)}
+
+/* ---- page head ---- */
+.phead{background:var(--concrete);border-bottom:1px solid var(--line);padding:2.6rem 0}
+.phead h1{font-size:clamp(1.8rem,4vw,2.8rem)}
+.phead .lead{margin-top:.9rem}
+
+/* ---- band ---- */
+.band{background:var(--hivis);padding:2.4rem 0}
+.band .wrap{display:flex;align-items:center;justify-content:space-between;gap:1.6rem;flex-wrap:wrap}
+.band h2{font-size:clamp(1.3rem,2.6vw,1.85rem);max-width:30ch;color:var(--graphite)}
+.band p{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
+  color:#6b5405;margin-top:.4rem}
+
+/* ---- case studies ---- */
+.case{background:#fff;border:1px solid var(--line);display:grid;grid-template-columns:1fr;overflow:hidden}
+.case .ph{aspect-ratio:16/10;background:var(--concrete-2);display:grid;place-items:center;
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.11em;text-transform:uppercase;color:#98a5ae;
+  border-bottom:1px solid var(--line);text-align:center;padding:1rem}
+.case .bd{padding:1.3rem}
+.case h3{font-size:1.02rem;margin-bottom:.5rem}
+.case p{font-size:.93rem;color:var(--steel);margin-bottom:.7rem}
+.case .res{border-left:3px solid var(--hivis);padding-left:.8rem;font-size:.9rem;color:var(--graphite)}
+.case dl{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin:.9rem 0;
+  border-top:1px solid var(--line);padding-top:.8rem}
+.case dt{font-family:var(--mono);font-size:.6rem;letter-spacing:.11em;text-transform:uppercase;color:var(--steel-lt)}
+.case dd{font-family:var(--mono);font-size:.76rem;color:var(--graphite);font-weight:600}
+.tagpill{display:inline-block;font-family:var(--mono);font-size:.63rem;letter-spacing:.11em;
+  text-transform:uppercase;background:var(--graphite);color:var(--hivis);padding:.22rem .55rem;margin-bottom:.7rem}
+
+/* ---- city chips ---- */
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.3rem}
+.chips a{font-family:var(--mono);font-size:.75rem;letter-spacing:.05em;border:1px solid var(--line);
+  padding:.42rem .8rem;color:var(--graphite);background:#fff}
+.chips a:hover{border-color:var(--graphite);text-decoration:none;background:var(--graphite);color:var(--hivis)}
+
+/* ---- footer ---- */
+footer{background:var(--graphite);color:#93a1ac;padding:3rem 0 1.4rem;font-size:.92rem}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2rem;
+  border-bottom:1px solid rgba(255,255,255,.1)}
+.fg h4{color:#fff;font-size:.86rem;letter-spacing:.06em;margin-bottom:.85rem}
+.fg a{display:block;color:#93a1ac;padding:.25rem 0;font-size:.9rem}
+.fg a:hover{color:var(--hivis);text-decoration:none}
+.fg p{font-size:.9rem;line-height:1.6}
+.fnum{font-family:'Archivo Black';font-size:1.2rem;color:var(--hivis);display:inline-block;margin-top:.6rem}
+.fnum:hover{text-decoration:none;color:var(--hivis)}
+.fbot{padding-top:1.3rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:#71818d;text-transform:uppercase}
+
+@media(max-width:960px){
+  .hero .wrap{grid-template-columns:1fr;gap:2rem}
+  .two-col{grid-template-columns:1fr;gap:2rem}
+  aside.rail{position:static}
+  .g3,.g4{grid-template-columns:repeat(2,1fr)}
+  .fg{grid-template-columns:1fr 1fr}
+  .spec{grid-template-columns:repeat(2,1fr)}
+  .spec div:nth-child(2){border-right:0}
+}
+@media(max-width:1000px){
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;
+    align-items:flex-start;gap:0;padding:.4rem 22px 1.2rem;border-bottom:1px solid var(--line);box-shadow:var(--sh)}
+  .nav.open{display:flex}
+  .nav>a,.dd{width:100%;padding:.7rem 0;border-bottom:1px solid var(--line)}
+  .dd .pan{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;
+    padding:.3rem 0 0 .9rem;min-width:0}
+  .burg{display:flex}
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .spec{grid-template-columns:1fr}
+  .spec div{border-right:0;border-bottom:1px solid var(--line)}
+  .fg{grid-template-columns:1fr}
+  .case dl{grid-template-columns:1fr}
+  form.qf .two{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="hz"></div>
+<div class="util"><div class="wrap">
+  <span>Mobile blasting · <strong>we come to you</strong> · Macomb · Oakland · St. Clair · Wayne · Lapeer</span>
+  <span>Free quotes · <a href="tel:8105550142"><strong>(810) 555-0142</strong></a></span>
+</div></div>
+<header><div class="wrap"><div class="bar">
+  <a class="brand" href="index.html">
+    <span class="mk">GLB</span>
+    <span><b>Great Lakes Blasting &amp; Coatings</b><span>Southeast Michigan</span></span>
+  </a>
+  <nav class="nav" id="nav" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <span class="dd"><a href="services.html">Services</a><span class="pan">
+      <a href="how-it-works.html">How it works</a>
+      <a href="mobile-sandblasting.html">Mobile Sandblasting</a><a href="wet-blasting.html">Wet Blasting</a><a href="rust-removal.html">Rust Removal</a><a href="paint-removal.html">Paint Removal</a><a href="surface-preparation.html">Surface Preparation</a><a href="industrial-painting.html">Industrial Painting</a>
+    </span></span>
+    <span class="dd"><a href="industries.html">Industries</a><span class="pan">
+      <a href="marine-boats.html">Marine &amp; Boats</a><a href="heavy-equipment.html">Heavy Equipment</a><a href="trailers.html">Trailers</a><a href="manufacturing-equipment.html">Manufacturing Equipment</a><a href="structural-steel.html">Structural Steel</a><a href="industrial-maintenance.html">Industrial Maintenance</a>
+    </span></span>
+    <span class="dd"><a href="service-area.html">Locations</a><span class="pan">
+      <a href="sandblasting-sterling-heights-mi.html">Sterling Heights</a><a href="sandblasting-warren-mi.html">Warren</a><a href="sandblasting-shelby-township-mi.html">Shelby Township</a><a href="sandblasting-macomb-township-mi.html">Macomb Township</a><a href="sandblasting-clinton-township-mi.html">Clinton Township</a><a href="sandblasting-rochester-hills-mi.html">Rochester Hills</a><a href="sandblasting-troy-mi.html">Troy</a><a href="sandblasting-st-clair-shores-mi.html">St. Clair Shores</a><a href="sandblasting-chesterfield-township-mi.html">Chesterfield Township</a><a href="sandblasting-port-huron-mi.html">Port Huron</a>
+    </span></span>
+    <a href="gallery.html">Work</a>
+    <a href="blog.html">Guides</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <a class="btn" href="tel:8105550142">Call now</a>
+  <button class="burg" id="burg" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</div></div></header><style>
+.rev{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rev.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}}
+.dia{background:var(--concrete);border:1px solid var(--line);padding:1.2rem;color:var(--steel)}
+.dia svg{width:100%;height:auto;display:block}
+.step-row{display:grid;grid-template-columns:1fr 1fr;gap:2.2rem;align-items:center;margin-bottom:2.6rem}
+.step-row.flip .txt{order:2}
+.step-num{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;color:var(--oxide);font-weight:600}
+.step-row h3{font-size:1.35rem;margin:.35rem 0 .6rem}
+.step-row p{color:var(--steel)}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem;margin-top:1.6rem}
+.mcard{border:1px solid var(--line);padding:1.3rem;background:#fff}
+.mcard h3{font-size:1.1rem;margin-bottom:.15rem}
+.mcard .sub{font-family:var(--mono);font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--oxide);margin-bottom:.9rem;display:block}
+.mcard dl{display:grid;grid-template-columns:auto 1fr;gap:.3rem .7rem;margin:.9rem 0;
+  border-top:1px solid var(--line);padding-top:.8rem}
+.mcard dt{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--steel-lt)}
+.mcard dd{font-family:var(--mono);font-size:.72rem;color:var(--graphite);font-weight:600}
+.mcard p{font-size:.9rem;color:var(--steel)}
+.yn{display:grid;gap:.4rem;margin:.9rem 0}
+.yn div{font-size:.86rem;padding-left:1.3rem;position:relative;color:var(--steel)}
+.yn div::before{position:absolute;left:0;font-family:var(--mono);font-weight:700}
+.yn .y::before{content:"+";color:#1c7a4a}
+.yn .n::before{content:"–";color:var(--oxide)}
+.vwrap{max-width:330px;margin:1.6rem auto 0;aspect-ratio:9/16;border:1px solid var(--line);
+  background:var(--concrete);position:relative;overflow:hidden}
+.vwrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vcap{text-align:center;font-family:var(--mono);font-size:.68rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--steel-lt);margin-top:.7rem}
+.pf{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem}
+.pf div{border-left:3px solid var(--hivis);padding:.5rem 0 .5rem .9rem}
+.pf b{display:block;font-family:'Archivo Black';font-size:.9rem;text-transform:uppercase;margin-bottom:.15rem}
+.pf p{font-size:.9rem;color:var(--steel);margin:0}
+@media(max-width:900px){
+  .step-row{grid-template-columns:1fr;gap:1.2rem}
+  .step-row.flip .txt{order:1}
+  .mgrid,.pf{grid-template-columns:1fr}
+}
+</style><div class="crumb"><div class="wrap"><a href="index.html">Home</a> / How it works</div></div><section class="phead"><div class="wrap">
+      <span class="kicker">New to blasting? Start here</span>
+      <h1>How mobile blasting works</h1>
+      <p class="lead">No jargon. What actually happens when we turn up, how the media gets chosen,
+      and why the surface underneath matters more than the paint that goes over it.</p>
+    </div></section>
+
+    <section class="sec"><div class="wrap">
+      <div class="sec-head rev">
+        <span class="kicker">The short version</span>
+        <h2>Compressed air, abrasive, and a lot of masking</h2>
+        <p class="lead">Blasting fires abrasive at a surface hard enough to knock off whatever is stuck to it —
+        rust, paint, scale, grime — and leaves clean, textured metal behind. The mobile part means the
+        compressor, pot and containment arrive on a trailer, so nothing has to be hauled anywhere.</p>
+      </div>
+      <div class="dia rev"><svg viewBox="0 0 420 220" role="img" aria-label="Diagram of a blast nozzle striking a surface">
+<defs><marker id="ar6" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+<path d="M0,0 L8,4 L0,8 z" fill="currentColor"/></marker></defs>
+<rect x="0" y="176" width="420" height="30" fill="currentColor" opacity=".16"/>
+<path d="M0 176 h420" stroke="currentColor" stroke-width="2"/>
+<g transform="translate(38,26) rotate(28)">
+<rect x="0" y="0" width="92" height="26" rx="3" fill="currentColor" opacity=".85"/>
+<path d="M92 3 L124 9 L124 17 L92 23 z" fill="currentColor"/>
+</g>
+<g opacity=".55">
+<path d="M150 74 L268 168" stroke="currentColor" stroke-width="1.5"/>
+<path d="M150 84 L246 172" stroke="currentColor" stroke-width="1.5"/>
+<path d="M158 66 L286 162" stroke="currentColor" stroke-width="1.5"/>
+</g>
+<circle cx="196" cy="112" r="2.6" fill="currentColor"/><circle cx="228" cy="136" r="2" fill="currentColor"/>
+<circle cx="176" cy="102" r="1.8" fill="currentColor"/><circle cx="250" cy="150" r="2.4" fill="currentColor"/>
+<g opacity=".8"><path d="M268 168 q22 -26 48 -14" stroke="currentColor" stroke-width="1.5" fill="none"/>
+<path d="M258 172 q30 -34 66 -26" stroke="currentColor" stroke-width="1.2" fill="none" opacity=".6"/></g>
+<path d="M132 60 L262 160" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" opacity=".5" marker-end="url(#ar6)"/>
+<text x="150" y="52" font-family="monospace" font-size="12" fill="currentColor">STANDOFF 12–18 IN</text>
+<text x="286" y="150" font-family="monospace" font-size="12" fill="currentColor">45–60°</text>
+<text x="14" y="200" font-family="monospace" font-size="12" fill="currentColor">SUBSTRATE</text>
+</svg></div>
+    </div></section>
+
+    <section class="sec"><div class="wrap">
+      <div class="sec-head rev">
+        <span class="kicker">See it running</span>
+        <h2>Thirty seconds of it working</h2>
+        <p class="lead">Close up, at the nozzle. This is what the surface looks like going from coated to bare.</p>
+      </div>
+      <div class="vwrap rev">
+        <iframe src="https://www.youtube-nocookie.com/embed/sVjIHoHp6wk?rel=0&amp;modestbranding=1&amp;playsinline=1"
+          title="Mobile blasting close up" loading="lazy" allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; encrypted-media; picture-in-picture"></iframe>
+      </div>
+      <p class="vcap rev">Sound off &middot; tap to play</p>
+    </div></section>
+
+    <section class="sec sec-alt"><div class="wrap">
+      <div class="sec-head rev">
+        <span class="kicker">Step by step</span>
+        <h2>What a job actually looks like</h2>
+        <p class="lead">Five stages. The blasting itself is rarely the longest one.</p>
+      </div>
+      <div class="step-row rev">
+          <div class="txt"><span class="step-num">STEP 01</span>
+            <h3>We walk the job</h3><p>Before anything gets quoted we look at what it is, what is on it, and what has to be protected. Media and pressure get chosen here — from the substrate first, then the coating. This is also where lead paint gets flagged, because pre-1978 coatings change the containment and the price.</p></div>
+          <div class="dia"><svg viewBox="0 0 420 220" role="img" aria-label="Diagram of a blast nozzle striking a surface">
+<defs><marker id="ar1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+<path d="M0,0 L8,4 L0,8 z" fill="currentColor"/></marker></defs>
+<rect x="0" y="176" width="420" height="30" fill="currentColor" opacity=".16"/>
+<path d="M0 176 h420" stroke="currentColor" stroke-width="2"/>
+<g transform="translate(38,26) rotate(28)">
+<rect x="0" y="0" width="92" height="26" rx="3" fill="currentColor" opacity=".85"/>
+<path d="M92 3 L124 9 L124 17 L92 23 z" fill="currentColor"/>
+</g>
+<g opacity=".55">
+<path d="M150 74 L268 168" stroke="currentColor" stroke-width="1.5"/>
+<path d="M150 84 L246 172" stroke="currentColor" stroke-width="1.5"/>
+<path d="M158 66 L286 162" stroke="currentColor" stroke-width="1.5"/>
+</g>
+<circle cx="196" cy="112" r="2.6" fill="currentColor"/><circle cx="228" cy="136" r="2" fill="currentColor"/>
+<circle cx="176" cy="102" r="1.8" fill="currentColor"/><circle cx="250" cy="150" r="2.4" fill="currentColor"/>
+<g opacity=".8"><path d="M268 168 q22 -26 48 -14" stroke="currentColor" stroke-width="1.5" fill="none"/>
+<path d="M258 172 q30 -34 66 -26" stroke="currentColor" stroke-width="1.2" fill="none" opacity=".6"/></g>
+<path d="M132 60 L262 160" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" opacity=".5" marker-end="url(#ar1)"/>
+<text x="150" y="52" font-family="monospace" font-size="12" fill="currentColor">STANDOFF 12–18 IN</text>
+<text x="286" y="150" font-family="monospace" font-size="12" fill="currentColor">45–60°</text>
+<text x="14" y="200" font-family="monospace" font-size="12" fill="currentColor">SUBSTRATE</text>
+</svg></div>
+        </div><div class="step-row rev flip">
+          <div class="txt"><span class="step-num">STEP 02</span>
+            <h3>Mask and contain</h3><p>Usually the longest part of the day and the part that separates a clean job from an expensive mistake. Cylinders, seals, bearings, glass, decals and electrical connectors get masked. Tarps and screens go up around the work zone so nothing drifts onto your inventory, your neighbour's car or the water.</p></div>
+          <div class="dia"><svg viewBox="0 0 420 220" role="img" aria-label="Diagram of containment tarps around a work area">
+<path d="M0 186 h420" stroke="currentColor" stroke-width="2"/>
+<g opacity=".5" stroke="currentColor" stroke-width="1.5" fill="none">
+<path d="M40 186 v-96 q0 -8 8 -8 h60"/><path d="M380 186 v-96 q0 -8 -8 -8 h-60"/>
+</g>
+<path d="M40 96 h340" stroke="currentColor" stroke-width="2" opacity=".7"/>
+<g opacity=".28"><rect x="48" y="100" width="70" height="84" fill="currentColor"/>
+<rect x="126" y="100" width="70" height="84" fill="currentColor"/>
+<rect x="204" y="100" width="70" height="84" fill="currentColor"/>
+<rect x="282" y="100" width="70" height="84" fill="currentColor"/></g>
+<g transform="translate(150,132)">
+<rect x="0" y="12" width="86" height="26" rx="3" fill="currentColor" opacity=".9"/>
+<circle cx="18" cy="44" r="7" fill="currentColor"/><circle cx="68" cy="44" r="7" fill="currentColor"/>
+<path d="M86 20 h22 v18 h-22 z" fill="currentColor" opacity=".7"/>
+</g>
+<text x="150" y="122" font-family="monospace" font-size="11" fill="currentColor">WORK ZONE</text>
+<text x="40" y="80" font-family="monospace" font-size="11" fill="currentColor" opacity=".75">TARP SCREENS</text>
+<text x="14" y="208" font-family="monospace" font-size="11" fill="currentColor" opacity=".6">
+Media collected and removed before we leave.</text>
+</svg></div>
+        </div><div class="step-row rev">
+          <div class="txt"><span class="step-num">STEP 03</span>
+            <h3>Blast</h3><p>Compressed air drives abrasive through the nozzle at 90–110 PSI. Water injected at the tip knocks the dust down and keeps the surface cool. The operator holds a consistent standoff and angle — too close gouges, too far wastes air and media.</p></div>
+          <div class="dia"><svg viewBox="0 0 420 220" role="img" aria-label="Cross-section comparing a rusted surface with a blasted angular profile">
+<text x="8" y="16" font-family="monospace" font-size="11" fill="currentColor" opacity=".7">BEFORE — SCALE AND OXIDE</text>
+<path d="M8 42 h190" stroke="currentColor" stroke-width="2"/>
+<rect x="8" y="42" width="190" height="26" fill="currentColor" opacity=".18"/>
+<path d="M8 42 q12 -9 26 -2 q14 8 30 -3 q16 -10 30 2 q14 10 30 -4 q16 -12 30 3 q14 9 26 -1 v28 h-172 z"
+      fill="currentColor" opacity=".42"/>
+<text x="8" y="88" font-family="monospace" font-size="11" fill="currentColor" opacity=".7">COATING SITS ON LOOSE OXIDE</text>
+<text x="228" y="16" font-family="monospace" font-size="11" fill="currentColor" opacity=".7">AFTER — ANGULAR PROFILE</text>
+<path d="M228 68 l14 -22 l14 22 l14 -22 l14 22 l14 -22 l14 22 l14 -22 l14 22 l14 -22 l14 22 l14 -22 l14 22"
+      stroke="currentColor" stroke-width="2" fill="none"/>
+<rect x="228" y="68" width="184" height="24" fill="currentColor" opacity=".18"/>
+<path d="M228 68 l14 -22 l14 22 l14 -22 l14 22 l14 -22 l14 22 l14 -22 l14 22 l14 -22 l14 22 l14 -22 l14 22 v24 h-184 z"
+      fill="currentColor" opacity=".1"/>
+<path d="M228 46 h184" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".5"/>
+<text x="228" y="112" font-family="monospace" font-size="11" fill="currentColor" opacity=".7">COATING KEYS INTO THE TOOTH</text>
+<g transform="translate(228,132)">
+<path d="M0 0 v20 M184 0 v20 M0 10 h184" stroke="currentColor" stroke-width="1" opacity=".55"/>
+<text x="58" y="36" font-family="monospace" font-size="12" fill="currentColor">1.5–3.5 MIL PROFILE</text>
+</g>
+<text x="8" y="196" font-family="monospace" font-size="11" fill="currentColor" opacity=".6">
+Blasting does not just clean. It cuts a mechanical key for the coating.</text>
+</svg></div>
+        </div><div class="step-row rev flip">
+          <div class="txt"><span class="step-num">STEP 04</span>
+            <h3>Rinse and inhibit</h3><p>Spent media gets collected and the surface rinsed. On wet jobs a holding inhibitor buys time before flash rust starts, because bare steel in Michigan humidity begins oxidising within hours, not days.</p></div>
+          <div class="dia"><svg viewBox="0 0 420 200" role="img" aria-label="Relative size and hardness of blast media">
+<g><circle cx="70" cy="86" r="34" fill="currentColor" opacity=".3"/>
+<path d="M70 52 l30 22 l-12 34 h-36 l-12 -34 z" fill="currentColor" opacity=".65"/>
+<text x="70" y="150" font-family="monospace" font-size="12" fill="currentColor" text-anchor="middle">GARNET</text>
+<text x="70" y="168" font-family="monospace" font-size="10" fill="currentColor" text-anchor="middle" opacity=".65">HARD · DEEP</text></g>
+<g><circle cx="210" cy="86" r="28" fill="currentColor" opacity=".24"/>
+<path d="M210 60 l24 18 l-9 28 h-30 l-9 -28 z" fill="currentColor" opacity=".5"/>
+<text x="210" y="150" font-family="monospace" font-size="12" fill="currentColor" text-anchor="middle">GLASS</text>
+<text x="210" y="168" font-family="monospace" font-size="10" fill="currentColor" text-anchor="middle" opacity=".65">SHARP · MEDIUM</text></g>
+<g><circle cx="345" cy="86" r="20" fill="currentColor" opacity=".18"/>
+<circle cx="345" cy="86" r="11" fill="currentColor" opacity=".38"/>
+<text x="345" y="150" font-family="monospace" font-size="12" fill="currentColor" text-anchor="middle">SODA</text>
+<text x="345" y="168" font-family="monospace" font-size="10" fill="currentColor" text-anchor="middle" opacity=".65">SOFT · NO PROFILE</text></g>
+</svg></div>
+        </div><div class="step-row rev">
+          <div class="txt"><span class="step-num">STEP 05</span>
+            <h3>Coat, same day</h3><p>Prepared steel has a shelf life measured in hours. We schedule so your painter is ready and the primer goes on inside the window. Prep that sits overnight in a humid shop is prep that gets done twice.</p></div>
+          <div class="dia"><svg viewBox="0 0 420 220" role="img" aria-label="Diagram of containment tarps around a work area">
+<path d="M0 186 h420" stroke="currentColor" stroke-width="2"/>
+<g opacity=".5" stroke="currentColor" stroke-width="1.5" fill="none">
+<path d="M40 186 v-96 q0 -8 8 -8 h60"/><path d="M380 186 v-96 q0 -8 -8 -8 h-60"/>
+</g>
+<path d="M40 96 h340" stroke="currentColor" stroke-width="2" opacity=".7"/>
+<g opacity=".28"><rect x="48" y="100" width="70" height="84" fill="currentColor"/>
+<rect x="126" y="100" width="70" height="84" fill="currentColor"/>
+<rect x="204" y="100" width="70" height="84" fill="currentColor"/>
+<rect x="282" y="100" width="70" height="84" fill="currentColor"/></g>
+<g transform="translate(150,132)">
+<rect x="0" y="12" width="86" height="26" rx="3" fill="currentColor" opacity=".9"/>
+<circle cx="18" cy="44" r="7" fill="currentColor"/><circle cx="68" cy="44" r="7" fill="currentColor"/>
+<path d="M86 20 h22 v18 h-22 z" fill="currentColor" opacity=".7"/>
+</g>
+<text x="150" y="122" font-family="monospace" font-size="11" fill="currentColor">WORK ZONE</text>
+<text x="40" y="80" font-family="monospace" font-size="11" fill="currentColor" opacity=".75">TARP SCREENS</text>
+<text x="14" y="208" font-family="monospace" font-size="11" fill="currentColor" opacity=".6">
+Media collected and removed before we leave.</text>
+</svg></div>
+        </div>
+    </div></section>
+
+    <section class="sec"><div class="wrap">
+      <div class="sec-head rev">
+        <span class="kicker">The bit nobody explains</span>
+        <h2>Why the profile matters</h2>
+        <p class="lead">Blasting is not only cleaning. It cuts a microscopic angular tooth into the steel,
+        and that tooth is what a coating grips. Too shallow and paint peels. Too deep and the peaks
+        telegraph through a thin film. Coating data sheets specify this window in mils — it is the number
+        your warranty depends on.</p>
+      </div>
+      <div class="dia rev"><svg viewBox="0 0 420 220" role="img" aria-label="Cross-section comparing a rusted surface with a blasted angular profile">
+<text x="8" y="16" font-family="monospace" font-size="11" fill="currentColor" opacity=".7">BEFORE — SCALE AND OXIDE</text>
+<path d="M8 42 h190" stroke="currentColor" stroke-width="2"/>
+<rect x="8" y="42" width="190" height="26" fill="currentColor" opacity=".18"/>
+<path d="M8 42 q12 -9 26 -2 q14 8 30 -3 q16 -10 30 2 q14 10 30 -4 q16 -12 30 3 q14 9 26 -1 v28 h-172 z"
+      fill="currentColor" opacity=".42"/>
+<text x="8" y="88" font-family="monospace" font-size="11" fill="currentColor" opacity=".7">COATING SITS ON LOOSE OXIDE</text>
+<text x="228" y="16" font-family="monospace" font-size="11" fill="currentColor" opacity=".7">AFTER — ANGULAR PROFILE</text>
+<path d="M228 68 l14 -22 l14 22 l14 -22 l14 22 l14 -22 l14 22 l14 -22 l14 22 l14 -22 l14 22 l14 -22 l14 22"
+      stroke="currentColor" stroke-width="2" fill="none"/>
+<rect x="228" y="68" width="184" height="24" fill="currentColor" opacity=".18"/>
+<path d="M228 68 l14 -22 l14 22 l14 -22 l14 22 l14 -22 l14 22 l14 -22 l14 22 l14 -22 l14 22 l14 -22 l14 22 v24 h-184 z"
+      fill="currentColor" opacity=".1"/>
+<path d="M228 46 h184" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".5"/>
+<text x="228" y="112" font-family="monospace" font-size="11" fill="currentColor" opacity=".7">COATING KEYS INTO THE TOOTH</text>
+<g transform="translate(228,132)">
+<path d="M0 0 v20 M184 0 v20 M0 10 h184" stroke="currentColor" stroke-width="1" opacity=".55"/>
+<text x="58" y="36" font-family="monospace" font-size="12" fill="currentColor">1.5–3.5 MIL PROFILE</text>
+</g>
+<text x="8" y="196" font-family="monospace" font-size="11" fill="currentColor" opacity=".6">
+Blasting does not just clean. It cuts a mechanical key for the coating.</text>
+</svg></div>
+      <p class="rev" style="margin-top:1.2rem;color:var(--steel)">This is also why painting over rust always fails.
+      Primer bonded to loose oxide is bonded to something already coming off.
+      <a href="rust-removal.html">More on rust removal &rarr;</a></p>
+    </div></section>
+
+    <section class="sec sec-alt"><div class="wrap">
+      <div class="sec-head rev">
+        <span class="kicker">Choosing media</span>
+        <h2>Not all abrasive is the same</h2>
+        <p class="lead">Media gets picked for the <em>substrate</em> first, then checked against the coating.
+        Choose for the coating alone and you strip the paint and ruin the part. And never silica sand —
+        that is what causes silicosis, and it is why the trade moved on.</p>
+      </div>
+      <div class="dia rev"><svg viewBox="0 0 420 200" role="img" aria-label="Relative size and hardness of blast media">
+<g><circle cx="70" cy="86" r="34" fill="currentColor" opacity=".3"/>
+<path d="M70 52 l30 22 l-12 34 h-36 l-12 -34 z" fill="currentColor" opacity=".65"/>
+<text x="70" y="150" font-family="monospace" font-size="12" fill="currentColor" text-anchor="middle">GARNET</text>
+<text x="70" y="168" font-family="monospace" font-size="10" fill="currentColor" text-anchor="middle" opacity=".65">HARD · DEEP</text></g>
+<g><circle cx="210" cy="86" r="28" fill="currentColor" opacity=".24"/>
+<path d="M210 60 l24 18 l-9 28 h-30 l-9 -28 z" fill="currentColor" opacity=".5"/>
+<text x="210" y="150" font-family="monospace" font-size="12" fill="currentColor" text-anchor="middle">GLASS</text>
+<text x="210" y="168" font-family="monospace" font-size="10" fill="currentColor" text-anchor="middle" opacity=".65">SHARP · MEDIUM</text></g>
+<g><circle cx="345" cy="86" r="20" fill="currentColor" opacity=".18"/>
+<circle cx="345" cy="86" r="11" fill="currentColor" opacity=".38"/>
+<text x="345" y="150" font-family="monospace" font-size="12" fill="currentColor" text-anchor="middle">SODA</text>
+<text x="345" y="168" font-family="monospace" font-size="10" fill="currentColor" text-anchor="middle" opacity=".65">SOFT · NO PROFILE</text></g>
+</svg></div>
+      <div class="mgrid"><div class="mcard rev">
+          <h3>Crushed glass</h3><span class="sub">The everyday default</span>
+          <p>Recycled bottle glass. Light, sharp and cheap, so it cuts paint and light-to-moderate rust efficiently without hitting the substrate as hard as garnet. Silica-free. This is what most of your job will run unless something argues otherwise.</p>
+          <dl><dt>Size</dt><dd>30–60 mesh</dd>
+              <dt>Profile</dt><dd>1.5–2.5 mil</dd>
+              <dt>Hardness</dt><dd>Moderate (5.5 Mohs)</dd></dl>
+          <div class="yn"><div class="y">General steel, trailers, frames, most paint removal</div><div class="n">Aluminium, gelcoat, anything thin and soft</div></div>
+        </div><div class="mcard rev">
+          <h3>Garnet</h3><span class="sub">When there's real tonnage to remove</span>
+          <p>Denser and harder, so every particle lands with more energy. Cuts stubborn coatings faster and leaves a deeper, sharper profile. Recyclable through several passes, which offsets the higher price on big jobs.</p>
+          <dl><dt>Size</dt><dd>30–60 mesh</dd>
+              <dt>Profile</dt><dd>2–3.5 mil</dd>
+              <dt>Hardness</dt><dd>Hard (7.5–8 Mohs)</dd></dl>
+          <div class="yn"><div class="y">Heavy scale, two-part epoxy, structural steel to spec</div><div class="n">Thin sheet metal, decorative surfaces</div></div>
+        </div><div class="mcard rev">
+          <h3>Soda</h3><span class="sub">Strips without touching the metal</span>
+          <p>Sodium bicarbonate breaks up on impact, so it lifts coating and leaves the substrate essentially untouched. That is exactly what you want on a boat hull or an aluminium panel — and exactly wrong if the surface has to be primed, because there is no tooth for the coating to grip.</p>
+          <dl><dt>Size</dt><dd>Fine</dd>
+              <dt>Profile</dt><dd>None — no profile left</dd>
+              <dt>Hardness</dt><dd>Very soft (2.5 Mohs)</dd></dl>
+          <div class="yn"><div class="y">Aluminium, gelcoat, trim, delicate restoration</div><div class="n">Anything that needs a profile for coating</div></div>
+        </div></div>
+      <p class="rev" style="margin-top:1.4rem;color:var(--steel)">
+        Longer read: <a href="garnet-vs-glass-media.html">garnet vs crushed glass &rarr;</a></p>
+    </div></section>
+
+    <section class="sec"><div class="wrap">
+      <div class="sec-head rev">
+        <span class="kicker">Wet or dry</span>
+        <h2>Water at the nozzle changes everything</h2>
+        <p class="lead">Injecting water wets the abrasive so it stays heavy instead of becoming a dust plume.
+        That is what makes it possible to work in an occupied shop, at a marina, or in a subdivision.
+        It also cools the surface, which is why thin sheet metal goes to wet blasting.</p>
+      </div>
+      <div class="dia rev"><svg viewBox="0 0 420 220" role="img" aria-label="Diagram of containment tarps around a work area">
+<path d="M0 186 h420" stroke="currentColor" stroke-width="2"/>
+<g opacity=".5" stroke="currentColor" stroke-width="1.5" fill="none">
+<path d="M40 186 v-96 q0 -8 8 -8 h60"/><path d="M380 186 v-96 q0 -8 -8 -8 h-60"/>
+</g>
+<path d="M40 96 h340" stroke="currentColor" stroke-width="2" opacity=".7"/>
+<g opacity=".28"><rect x="48" y="100" width="70" height="84" fill="currentColor"/>
+<rect x="126" y="100" width="70" height="84" fill="currentColor"/>
+<rect x="204" y="100" width="70" height="84" fill="currentColor"/>
+<rect x="282" y="100" width="70" height="84" fill="currentColor"/></g>
+<g transform="translate(150,132)">
+<rect x="0" y="12" width="86" height="26" rx="3" fill="currentColor" opacity=".9"/>
+<circle cx="18" cy="44" r="7" fill="currentColor"/><circle cx="68" cy="44" r="7" fill="currentColor"/>
+<path d="M86 20 h22 v18 h-22 z" fill="currentColor" opacity=".7"/>
+</g>
+<text x="150" y="122" font-family="monospace" font-size="11" fill="currentColor">WORK ZONE</text>
+<text x="40" y="80" font-family="monospace" font-size="11" fill="currentColor" opacity=".75">TARP SCREENS</text>
+<text x="14" y="208" font-family="monospace" font-size="11" fill="currentColor" opacity=".6">
+Media collected and removed before we leave.</text>
+</svg></div>
+      <p class="rev" style="margin-top:1.2rem;color:var(--steel)">The trade-off: wet-blasted bare steel starts
+      flash rusting within hours in Michigan humidity. That is chemistry, not a defect — it just means the
+      primer has to go on the same day. <a href="prevent-flash-rust.html">How we plan around flash rust &rarr;</a></p>
+    </div></section>
+
+    <section class="sec sec-alt"><div class="wrap">
+      <div class="sec-head rev">
+        <span class="kicker">Pricing</span>
+        <h2>What actually drives the number</h2>
+        <p class="lead">Six things, roughly in order of impact.</p>
+      </div>
+      <div class="pf"><div class='rev'><b>Surface area</b><p>The main driver. Square footage of actual surface, not the footprint of the object.</p></div><div class='rev'><b>What's on it</b><p>Light surface rust is fast. Ten layers of two-part epoxy or thick mill scale is not.</p></div><div class='rev'><b>Masking complexity</b><p>A bare frame is quick. A machine with cylinders, seals, glass and decals takes hours before blasting starts.</p></div><div class='rev'><b>Access</b><p>Whether the rig can get within about 150 feet, and whether we're working at height or in a confined space.</p></div><div class='rev'><b>Containment</b><p>An open farm yard is straightforward. Working beside a running production line or over water is not.</p></div><div class='rev'><b>Lead paint</b><p>Pre-1978 coatings require full containment and regulated waste disposal. It is a real cost and it gets raised up front.</p></div></div>
+    </div></section>
+
+    <section class="sec"><div class="wrap">
+      <div class="sec-head rev">
+        <span class="kicker">Still not sure?</span>
+        <h2>Tell us what you've got</h2>
+        <p class="lead">If it is a job we should not take — wrong substrate, needs a booth, needs a licensed
+        lead abatement contractor — we will say so and point you somewhere better.</p>
+      </div>
+      <ul style="columns:2;column-gap:2rem;color:var(--steel);margin-left:1.1rem">
+        <li style="margin-bottom:.4rem"><a href="mobile-sandblasting.html">Mobile Sandblasting</a></li><li style="margin-bottom:.4rem"><a href="wet-blasting.html">Wet Blasting</a></li><li style="margin-bottom:.4rem"><a href="rust-removal.html">Rust Removal</a></li><li style="margin-bottom:.4rem"><a href="paint-removal.html">Paint Removal</a></li><li style="margin-bottom:.4rem"><a href="surface-preparation.html">Surface Preparation</a></li><li style="margin-bottom:.4rem"><a href="industrial-painting.html">Industrial Painting</a></li>
+      </ul>
+    </div></section>
+
+    <section class="sec sec-alt"><div class="wrap">
+  <div class="two-col" style="padding:0">
+    <div class="prose">
+      <span class="kicker">Free quote</span>
+      <h2 style="margin-top:0">Get a free quote</h2>
+      <p class="lead">Three dropdowns and your number.</p>
+      <p>Three dropdowns and your number. That is enough for us to come back with a real figure instead of a "call for pricing."</p>
+      <ul>
+        <li><strong>A price or a range</strong> — not a vague estimate</li>
+        <li><strong>The media and pressure</strong> we would use, and why that one</li>
+        <li><strong>How long it takes</strong> and what has to be masked first</li>
+        <li><strong>An honest no</strong> if it is a job we should not take</li>
+      </ul>
+      <p>Prefer the phone? <a href="tel:8105550142">(810) 555-0142</a>, Monday to Saturday, 7am to 7pm.</p>
+    </div>
+    <div class="qc">
+  <div class="qc-h"><h3>Request a quote</h3><p>Most quotes back within one business day</p></div>
+  <form class="qf" id="howq" novalidate>
+    <div class="ok" id="howq-ok">Request received. We'll be in touch — for anything urgent, call (810) 555-0142.</div>
+
+    <div class="qstep">
+      <span class="qnum">1</span>
+      <label for="howq-need">What do you need done?</label>
+      <select id="howq-need"><option value="">Choose one…</option><option>Rust removal</option><option>Paint stripping</option><option>Rust + paint (both)</option><option>Surface prep to coating spec</option><option>Graffiti removal</option><option>Cleaning / degreasing</option><option>Not sure — take a look and tell me</option></select>
+    </div>
+
+    <div class="qstep">
+      <span class="qnum">2</span>
+      <label for="howq-item">What is it?</label>
+      <select id="howq-item"><option value="">Choose one…</option><option>Trailer (utility, dump, enclosed)</option><option>Boat, hull or bottom paint</option><option>Boat trailer</option><option>Car or truck frame</option><option>Car or truck body panels</option><option>Tractor or farm implement</option><option>Heavy equipment (excavator, loader, skid steer)</option><option>Structural steel (beams, columns, railings)</option><option>Machine base, fixture or weldment</option><option>Gate, fence or ornamental iron</option><option>Brick, block or concrete</option><option>Something else</option></select>
+    </div>
+
+    <div class="qstep">
+      <span class="qnum">3</span>
+      <label for="howq-size">Roughly how big?</label>
+      <select id="howq-size"><option value="">Choose one…</option><option>Small — fits on a bench</option><option>Medium — car, trailer or implement sized</option><option>Large — equipment, hull or structural</option><option>Multiple pieces / ongoing work</option><option>Not sure</option></select>
+    </div>
+
+    <hr class="qrule">
+
+    <div class="two">
+      <div><label for="howq-n">Your name</label><input id="howq-n" type="text" autocomplete="name"></div>
+      <div><label for="howq-p">Phone</label><input id="howq-p" type="tel" autocomplete="tel"></div>
+    </div>
+    <div><label for="howq-c">City</label><input id="howq-c" type="text" placeholder="Where is the work?"></div>
+    <div><label for="howq-d">Anything else <span class="opt">(optional)</span></label>
+      <textarea id="howq-d" placeholder="Condition, timeline, who's coating it after"></textarea></div>
+    <button class="btn btn-wide" type="submit">Request my quote</button>
+    <p class="fine">Or call (810) 555-0142</p>
+  </form>
+</div>
+  </div>
+</div></section>
+    <section class="band"><div class="wrap">
+  <div><h2>Questions about your specific job? Call (810) 555-0142.</h2><p>Free quote, no obligation</p></div>
+  <div><a class="btn btn-dk" href="tel:8105550142">Call (810) 555-0142</a></div>
+</div></section><script>
+(function(){
+  var els=document.querySelectorAll('.rev');
+  if(!('IntersectionObserver' in window)){
+    Array.prototype.forEach.call(els,function(e){e.classList.add('in');});return;
+  }
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target); } });
+  },{rootMargin:'0px 0px -12% 0px',threshold:.12});
+  Array.prototype.forEach.call(els,function(e){io.observe(e);});
+})();
+</script><footer><div class="wrap">
+  <div class="fg">
+    <div>
+      <h4>Great Lakes Blasting &amp; Coatings</h4>
+      <p>Mobile abrasive blasting and surface preparation across Southeast Michigan. The rig comes to you — shop, yard, farm, marina or job site.</p>
+      <a class="fnum" href="tel:8105550142">(810) 555-0142</a>
+      <p style="margin-top:.5rem">Imlay City, MI</p>
+    </div>
+    <div><h4>Services</h4><a href="how-it-works.html">How it works</a><a href="mobile-sandblasting.html">Mobile Sandblasting</a><a href="wet-blasting.html">Wet Blasting</a><a href="rust-removal.html">Rust Removal</a><a href="paint-removal.html">Paint Removal</a><a href="surface-preparation.html">Surface Preparation</a><a href="industrial-painting.html">Industrial Painting</a></div>
+    <div><h4>Industries</h4><a href="marine-boats.html">Marine &amp; Boats</a><a href="heavy-equipment.html">Heavy Equipment</a><a href="trailers.html">Trailers</a><a href="manufacturing-equipment.html">Manufacturing Equipment</a><a href="structural-steel.html">Structural Steel</a><a href="industrial-maintenance.html">Industrial Maintenance</a></div>
+    <div><h4>Locations</h4><a href="sandblasting-sterling-heights-mi.html">Sterling Heights</a><a href="sandblasting-warren-mi.html">Warren</a><a href="sandblasting-shelby-township-mi.html">Shelby Township</a><a href="sandblasting-macomb-township-mi.html">Macomb Township</a><a href="sandblasting-clinton-township-mi.html">Clinton Township</a><a href="sandblasting-rochester-hills-mi.html">Rochester Hills</a><a href="service-area.html">All locations →</a></div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Great Lakes Blasting &amp; Coatings</span>
+    <span>Macomb · Oakland · St. Clair · Wayne · Lapeer</span>
+  </div>
+</div></footer>
+<script>
+document.getElementById('burg').addEventListener('click',function(){
+  var n=document.getElementById('nav'),o=n.classList.toggle('open');
+  this.setAttribute('aria-expanded',o);
+});
+document.querySelectorAll('form.qf').forEach(function(f){
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=document.getElementById(f.id+'-ok');
+    ok.classList.add('on');
+    f.querySelectorAll('input,textarea').forEach(function(i){i.value='';});
+    ok.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+});
+</script>
+</body></html>
