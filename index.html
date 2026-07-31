@@ -20,6 +20,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+body{overflow-x:hidden}
 body{font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);
   line-height:1.62;-webkit-font-smoothing:antialiased;font-size:16.5px}
 h1,h2,h3,h4,.disp{font-family:'Archivo Black','Archivo',sans-serif;font-weight:400;
@@ -57,7 +58,9 @@ header{position:sticky;top:0;z-index:80;background:#fff;border-bottom:1px solid 
 .brand:hover{text-decoration:none}
 .brand .mk{width:44px;height:44px;flex:none;background:var(--graphite);color:var(--hivis);
   display:grid;place-items:center;font-family:'Archivo Black';font-size:.95rem;letter-spacing:-.02em}
-.brand b{display:block;font-family:'Archivo Black';font-size:1.02rem;text-transform:uppercase;line-height:1.05}
+.brand b{display:block;font-family:'Archivo Black';font-size:1.02rem;text-transform:uppercase;
+  line-height:1.05;white-space:nowrap}
+@media(max-width:430px){.brand b{font-size:.86rem}.brand .mk{width:38px;height:38px;font-size:.8rem}}
 .brand span{font-family:var(--mono);font-size:.63rem;letter-spacing:.11em;color:var(--steel-lt);text-transform:uppercase}
 .nav{display:flex;align-items:center;gap:1.35rem}
 .nav>a,.dd>a{font-family:var(--mono);font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;
@@ -230,7 +233,7 @@ footer{background:var(--graphite);color:#93a1ac;padding:3rem 0 1.4rem;font-size:
   .spec{grid-template-columns:repeat(2,1fr)}
   .spec div:nth-child(2){border-right:0}
 }
-@media(max-width:680px){
+@media(max-width:1000px){
   .nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;
     align-items:flex-start;gap:0;padding:.4rem 22px 1.2rem;border-bottom:1px solid var(--line);box-shadow:var(--sh)}
   .nav.open{display:flex}
@@ -262,6 +265,7 @@ footer{background:var(--graphite);color:#93a1ac;padding:3rem 0 1.4rem;font-size:
   <nav class="nav" id="nav" aria-label="Primary">
     <a href="index.html">Home</a>
     <span class="dd"><a href="services.html">Services</a><span class="pan">
+      <a href="how-it-works.html">How it works</a>
       <a href="mobile-sandblasting.html">Mobile Sandblasting</a><a href="wet-blasting.html">Wet Blasting</a><a href="rust-removal.html">Rust Removal</a><a href="paint-removal.html">Paint Removal</a><a href="surface-preparation.html">Surface Preparation</a><a href="industrial-painting.html">Industrial Painting</a>
     </span></span>
     <span class="dd"><a href="industries.html">Industries</a><span class="pan">
@@ -304,7 +308,7 @@ footer{background:var(--graphite);color:#93a1ac;padding:3rem 0 1.4rem;font-size:
 .hcar-slide .ph{position:absolute;inset:0;z-index:1;display:grid;place-items:center;
   background:rgba(255,255,255,.06);color:#93a5b0;text-align:center;padding:1.2rem;
   font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;line-height:1.7}
-.hcar-slide img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover}
+.hcar-slide img,.hcar-slide video{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover}
 .hcar-cap{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:2rem .9rem .8rem;
   background:linear-gradient(transparent,rgba(14,18,21,.94))}
 .hcar-tag{display:inline-block;font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;
@@ -349,15 +353,15 @@ footer{background:var(--graphite);color:#93a1ac;padding:3rem 0 1.4rem;font-size:
     <h1>Mobile sandblasting.<br><em>Rust and paint removal.</em></h1>
     <p class="lead">We bring the compressor, the pot and the containment to you. Nothing gets hauled, nothing waits in a shop queue, and nothing leaves your yard.</p>
     <div class="hcar" id="hcar">
-  <div class="hcar-win"><div class="hcar-track" id="hcarTrack"><a class="hcar-slide" href="gallery.html#case-1"><span class="ph">Trailers<br>before / after photo<br>photos/case-1.jpg</span><img src="photos/case-1.jpg" alt="Rusted utility trailer, full frame restoration" loading="lazy" onerror="this.remove()"><span class="hcar-cap"><span class="hcar-tag">Trailers</span><b>Rusted utility trailer, full frame restoration</b><em>View case study &rarr;</em></span></a><a class="hcar-slide" href="gallery.html#case-2"><span class="ph">Marine<br>before / after photo<br>photos/case-2.jpg</span><img src="photos/case-2.jpg" alt="Boat bottom paint removal, 28 ft cruiser" loading="lazy" onerror="this.remove()"><span class="hcar-cap"><span class="hcar-tag">Marine</span><b>Boat bottom paint removal, 28 ft cruiser</b><em>View case study &rarr;</em></span></a><a class="hcar-slide" href="gallery.html#case-3"><span class="ph">Structural Steel<br>before / after photo<br>photos/case-3.jpg</span><img src="photos/case-3.jpg" alt="Structural beam blasting to SSPC-SP 6" loading="lazy" onerror="this.remove()"><span class="hcar-cap"><span class="hcar-tag">Structural Steel</span><b>Structural beam blasting to SSPC-SP 6</b><em>View case study &rarr;</em></span></a><a class="hcar-slide" href="gallery.html#case-4"><span class="ph">Heavy Equipment<br>before / after photo<br>photos/case-4.jpg</span><img src="photos/case-4.jpg" alt="Skid steer refurbishment before repaint" loading="lazy" onerror="this.remove()"><span class="hcar-cap"><span class="hcar-tag">Heavy Equipment</span><b>Skid steer refurbishment before repaint</b><em>View case study &rarr;</em></span></a></div></div>
+  <div class="hcar-win"><div class="hcar-track" id="hcarTrack"><a class="hcar-slide" href="gallery.html#case-1"><span class="ph">Trailers<br>before / after photo<br>photos/case-1.jpg</span><img src="photos/case-1.jpg" alt="Rusted utility trailer, full frame restoration" loading="lazy" onerror="this.remove()"><span class="hcar-cap"><span class="hcar-tag">Trailers</span><b>Rusted utility trailer, full frame restoration</b><em>View case study &rarr;</em></span></a><a class="hcar-slide" href="gallery.html#case-2"><span class="ph">Marine<br>before / after photo<br>photos/case-2.jpg</span><img src="photos/case-2.jpg" alt="Boat bottom paint removal, 28 ft cruiser" loading="lazy" onerror="this.remove()"><span class="hcar-cap"><span class="hcar-tag">Marine</span><b>Boat bottom paint removal, 28 ft cruiser</b><em>View case study &rarr;</em></span></a><a class="hcar-slide" href="gallery.html#case-3"><span class="ph">Structural Steel<br>before / after photo<br>photos/case-3.jpg</span><img src="photos/case-3.jpg" alt="Structural beam blasting to SSPC-SP 6" loading="lazy" onerror="this.remove()"><span class="hcar-cap"><span class="hcar-tag">Structural Steel</span><b>Structural beam blasting to SSPC-SP 6</b><em>View case study &rarr;</em></span></a><a class="hcar-slide" href="gallery.html#case-4"><span class="ph">Heavy Equipment<br>before / after photo<br>photos/case-4.jpg</span><img src="photos/case-4.jpg" alt="Skid steer refurbishment before repaint" loading="lazy" onerror="this.remove()"><span class="hcar-cap"><span class="hcar-tag">Heavy Equipment</span><b>Skid steer refurbishment before repaint</b><em>View case study &rarr;</em></span></a><a class="hcar-slide" href="how-it-works.html"><span class="ph">See it work<br>video<br>photos/how-it-works.mp4</span><video src="photos/how-it-works.mp4" autoplay muted loop playsinline preload="metadata" onerror="this.remove()"></video><span class="hcar-cap"><span class="hcar-tag">See it work</span><b>What mobile blasting actually looks like</b><em>See how it works &rarr;</em></span></a></div></div>
   <button class="hcar-nav hcar-prev" id="hcarPrev" type="button" aria-label="Previous">&#8249;</button>
   <button class="hcar-nav hcar-next" id="hcarNext" type="button" aria-label="Next">&#8250;</button>
-  <div class="hcar-dots" id="hcarDots"><button type="button" data-go="0" aria-label="Slide 1" aria-current="true"></button><button type="button" data-go="1" aria-label="Slide 2"></button><button type="button" data-go="2" aria-label="Slide 3"></button><button type="button" data-go="3" aria-label="Slide 4"></button></div>
+  <div class="hcar-dots" id="hcarDots"><button type="button" data-go="0" aria-label="Slide 1" aria-current="true"></button><button type="button" data-go="1" aria-label="Slide 2"></button><button type="button" data-go="2" aria-label="Slide 3"></button><button type="button" data-go="3" aria-label="Slide 4"></button><button type="button" data-go="4" aria-label="Slide 5"></button></div>
 </div>
 <script>
 (function(){
   var track=document.getElementById('hcarTrack'),wrap=document.getElementById('hcar'),
-      dots=document.getElementById('hcarDots'),n=4,i=0,timer=null,
+      dots=document.getElementById('hcarDots'),n=5,i=0,timer=null,
       reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function go(k){
     i=(k+n)%n;
@@ -517,7 +521,7 @@ footer{background:var(--graphite);color:#93a1ac;padding:3rem 0 1.4rem;font-size:
       <a class="fnum" href="tel:8105550142">(810) 555-0142</a>
       <p style="margin-top:.5rem">Imlay City, MI</p>
     </div>
-    <div><h4>Services</h4><a href="mobile-sandblasting.html">Mobile Sandblasting</a><a href="wet-blasting.html">Wet Blasting</a><a href="rust-removal.html">Rust Removal</a><a href="paint-removal.html">Paint Removal</a><a href="surface-preparation.html">Surface Preparation</a><a href="industrial-painting.html">Industrial Painting</a></div>
+    <div><h4>Services</h4><a href="how-it-works.html">How it works</a><a href="mobile-sandblasting.html">Mobile Sandblasting</a><a href="wet-blasting.html">Wet Blasting</a><a href="rust-removal.html">Rust Removal</a><a href="paint-removal.html">Paint Removal</a><a href="surface-preparation.html">Surface Preparation</a><a href="industrial-painting.html">Industrial Painting</a></div>
     <div><h4>Industries</h4><a href="marine-boats.html">Marine &amp; Boats</a><a href="heavy-equipment.html">Heavy Equipment</a><a href="trailers.html">Trailers</a><a href="manufacturing-equipment.html">Manufacturing Equipment</a><a href="structural-steel.html">Structural Steel</a><a href="industrial-maintenance.html">Industrial Maintenance</a></div>
     <div><h4>Locations</h4><a href="sandblasting-sterling-heights-mi.html">Sterling Heights</a><a href="sandblasting-warren-mi.html">Warren</a><a href="sandblasting-shelby-township-mi.html">Shelby Township</a><a href="sandblasting-macomb-township-mi.html">Macomb Township</a><a href="sandblasting-clinton-township-mi.html">Clinton Township</a><a href="sandblasting-rochester-hills-mi.html">Rochester Hills</a><a href="service-area.html">All locations →</a></div>
   </div>
